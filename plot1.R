@@ -10,7 +10,6 @@ df$DateTime <- dmy_hms(paste(df$Date[], df$Time[]), tz = "EST")
 
 #Subset to DateTime first and second of febuary 2007
 df.subset <- df[year(df$DateTime) == 2007 & month(df$DateTime) == 2 &(mday(df$DateTime) == 1 | mday(df$DateTime) == 2),]
-df.subset[3][df.subset[3]=="?"] <- NA
 df.subset[3]<- as.numeric(df.subset[,3], rm.na=TRUE)
 df.subset[4]<- as.numeric(df.subset[,4], rm.na=TRUE)
 
